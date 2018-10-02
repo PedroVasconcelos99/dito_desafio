@@ -65,15 +65,17 @@ axios.get('https://cors.io/?https://storage.googleapis.com/dito-questions/survey
 
         _.forEach(lojas, function(loja) {
             
-            $('table#tabela-lojas tbody').append('<tr><td>' + loja.storeName + '</td>'+
-           '<td>' + calculaSatisfacaoIndvidual(loja.storeId) + '</td>'+
-            '<td>' + qtdeAvaliacoesPorLoja(loja.storeId) + '</td>'+
-            '<td>' + porcentagemDevotos(loja.storeId, 5) + '</td>'+
-            '<td>' +  porcentagemDevotos(loja.storeId, 4) + '</td>'+
-            '<td>' +porcentagemDevotos(loja.storeId, 3) + '</td>'+
-            '<td>' + porcentagemDevotos(loja.storeId, 2) + '</td>'+
-            '<td>' +  porcentagemDevotos(loja.storeId, 1) + '</td>'+
-            '<td><button>+</button></td></tr>');
+            $('table#tabela-lojas tbody').append(
+                '<tr><td>' + loja.storeName + '</td>'+
+                '<td>' + calculaSatisfacaoIndvidual(loja.storeId) + '</td>'+
+                '<td>' + qtdeAvaliacoesPorLoja(loja.storeId) + '</td>'+
+                '<td>' + porcentagemDevotos(loja.storeId, 5) + '</td>'+
+                '<td>' +  porcentagemDevotos(loja.storeId, 4) + '</td>'+
+                '<td>' +porcentagemDevotos(loja.storeId, 3) + '</td>'+
+                '<td>' + porcentagemDevotos(loja.storeId, 2) + '</td>'+
+                '<td>' +  porcentagemDevotos(loja.storeId, 1) + '</td>'+
+                '<td><button>+</button></td></tr>'
+                );
         });
 
     })
@@ -81,14 +83,19 @@ axios.get('https://cors.io/?https://storage.googleapis.com/dito-questions/survey
         console.log('erro', error);
     });
 
+
+    
 //codigo para a caixa de pesquisa
 
-        $("#input-loja").on("keyup", function() {
-          var value = $(this).val().toLowerCase();
-          $("#tbody-loja tr").filter(function() {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-          });
-        });
+$("#input-loja").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+
+    $("#tbody-loja tr").filter(function() {
+        $(this).toggle(
+            $(this).text().toLowerCase().indexOf(value) > -1
+        )
+    });
+});
 
 
 
