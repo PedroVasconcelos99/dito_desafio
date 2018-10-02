@@ -1,0 +1,208 @@
+body {
+    background-color: #f5f5f5;
+    counter-reset: table;
+}
+main {
+    margin-top: 30px;
+    .container {
+        background-color: #fff;
+        .pesquisa {
+            h1 {
+                width: 100%;
+                background-color: #fdfdfd;
+                border: none;
+                padding: 20px 24px;
+                font-weight: bold;
+                font-size: 24px;
+                margin: 0;
+                color: #525c5d;
+            }
+        }
+        .nav.nav-tabs{
+            background-color: #f5f5f5;
+            border-bottom: none;
+            li {
+                padding: 20px 24px;
+                font-size: 12px;
+                border-top: 3px solid #87c341;
+                text-transform: uppercase;
+                font-weight: bold;
+                background-color: #fff;
+                color: #aaa
+
+            }
+        }
+        h2 {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 40px 0;
+        }
+        .dados-avaliacoes {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            .box {
+                border: 1px solid #d2d2d2;
+                text-align: center;
+                font-weight: bold;
+                padding: 20px 0;
+                min-width: 10vh;
+                width: 14.28%;
+                margin-left: -1px;
+                @media (max-width: 720px) {
+                    width: 50%;
+                }
+                
+                h3 {
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+                .score-text {
+                    display: flex;
+                    align-items: center;
+                    height: 37px;
+                    
+                    justify-content: center;
+                }
+                &.satisfacao, &.avaliacoes {
+                    .score-text{
+                        font-size: 32px;
+                    }
+                }
+                .score-container {
+                    display: flex;
+                    justify-content: center;
+                    .score-icon {
+                        background: url(../images/sprite-faces.png) no-repeat;
+                        height: 37px;
+                        width: 37px;
+                        display: inline-block;
+                        margin-right: 10px;
+                    }
+                }
+                &.muito-boa {
+                    .score-icon {
+                        background-position-x: -37px;
+                    }
+                }
+                &.razoavel {
+                    .score-icon {
+                        background-position-x: -74px;
+                    }
+                }
+                &.ruim {
+                    .score-icon {
+                        background-position-x: -111px;
+                    }
+                }
+                &.horrivel {
+                    .score-icon {
+                        background-position-x: right;
+                    }
+                }
+
+            }
+        }
+        .pesquisa-loja {
+            margin: 25px 0;
+            .input-group {
+                max-width: 35vh;
+                input {
+                    border: 1px solid #d2d2d2;
+                    box-shadow: none;
+                    border-radius: 0;
+                }
+                button {
+                    border: 1px solid #d2d2d2;
+                    border-radius: 0;
+                    background-color: #ededed;
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+        }
+        
+        
+    }
+}
+
+// estilo paginação
+.pagination {
+    .active a {
+        background-color: #555555;
+        border-color: #555555;
+        &:hover {
+            background-color: #000;
+            border-color: #555555;
+        }
+    }
+    >li >a {
+        color: #000;
+    }
+}
+
+
+//estilos para tabela
+.table-responsive {
+    overflow-x: unset;
+    table {
+        thead {
+            tr {
+                border: 1px solid #d2d2d2;
+                background-color: #ededed;
+                th {
+                    border-bottom: none;
+                    text-transform: uppercase;
+                    color: #777;
+                    padding: 20px 15px;
+                    font-size: 12px;
+
+                    &:first-child {
+                        width: 340px;
+                    }
+                }
+            }
+        }
+        tbody {
+            tr {
+                border: 1px solid #d2d2d2;
+            
+                td {
+                    padding: 20px 15px;
+                    font-weight: bold;
+                    button {
+                        border: 1px solid #d2d2d2;
+                        &:hover {
+                            background-color: #555555;
+                        }
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                    &:first-child {
+                        &::before {
+                            counter-increment: table;
+                            content: counter(table);
+                            margin-right: 10px;
+                            border: 1px solid #d2d2d2;
+                            border-radius: 50%;
+                            padding: 7px 10px;
+                        }
+                    }
+                }
+                &:hover {
+                    background-color: #fcfcfc;
+                    td {
+                        &:first-child {
+                            color: #87c341;
+                        }
+                        &::before {
+                            color: initial;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
